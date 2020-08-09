@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <input type="checkbox" v-model="language" value="学习">学习
+    <input type="checkbox" v-model="language" value="努力">努力
+    <input type="checkbox" v-model="language" value="找工作">找工作
+<h1>
+    language:{{language.join(',')}}
+</h1>
+    <select multiple v-model="form">
+        <option>--你想去哪里找工作</option>
+        <option value="bj">北京</option>
+        <option value="hz">杭州</option>
+        <option value="sh">上海</option>
+    </select>
+    <h1>
+        form:{{form.join(',')}}
+    </h1>
+</div>
+<script src="../node_modules/vue/dist/vue.js"></script>
+<script>
+    var app=new Vue({
+        el:"#app",
+        data:{
+            language:[],
+            form:[]
+        }
+    });
+</script>
+</body>
+</html>

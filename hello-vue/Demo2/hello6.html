@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+<h1>打个招呼</h1>
+
+    <introduce title="王自龙好好努力，快熬完了"></introduce>
+<my-list :items="lesson"></my-list>
+</div>
+<script src="../node_modules/vue/dist/vue.js"></script>
+<script>
+    Vue.component("introduce",{
+        template:'<h1>{{title}}<hr size="10" color="red"/></h1>',
+        props:['title']
+    });
+    const myList={
+        template: `
+        <ul>
+        <li v-for="item in items" :key="item.id">{{item.id}}:{{item.name}}</li>
+</ul>
+        `,
+        props: {
+            items:{
+                type:Array,
+                default:[],
+                required:true
+            }
+        }
+    }
+    var app = new Vue({
+        el: "#app",
+       components:{
+            myList
+       },
+        data:{
+            lesson:[{id:1,name:"上市公司"},{id:2,name:"国家企业"},{id:3,name:"中型企业"}]
+        }
+
+    });
+</script>
+</body>
+</html>

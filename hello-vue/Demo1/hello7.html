@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <li v-for="user in users">
+            {{user.name}}--{{user.gender}}--{{user.age}}
+        </li>
+    </ul>
+</div>
+<script src="../node_modules/vue/dist/vue.js"></script>
+<script>
+    var app=new Vue({
+        el:"#app",
+        data:{
+            users:[
+                {name:"王自龙",gender:'男',age:22},
+                {name:"王自强",gender:'男',age:18},
+                {name:"王瑾轩",gender:'女',age:2},
+            ]
+        }
+    });
+</script>
+</body>
+</html>

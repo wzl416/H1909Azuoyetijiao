@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #app{
+            border: 10px dashed red;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <button v-bnid:title="title" style="border: 5px "></button>
+</div>
+<script src="../node_modules/vue/dist/vue.js"></script>
+<script>
+    var app=new Vue({
+       el:"#app",
+       data:{
+           title:"title"
+       }
+    });
+</script>
+</body>
+</html>
